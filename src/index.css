@@ -1,13 +1,88 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  background-color: white;
+  background: rgb(6, 28, 149);
+  background: linear-gradient(150deg, rgba(6, 28, 149, 1) 0%, rgba(252, 40, 0, 1) 100%);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 10px 0;
+  color: white;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  grid-column: 1/3;
+  margin-bottom: 30px;
+  background-color: #04105b;
+  color: white;
+  padding: 10px;
+}
+
+textarea,
+#skillName {
+  grid-column: 1/3;
+  resize: none;
+}
+
+label:nth-of-type(odd),
+input:nth-of-type(odd),
+section>label[for="summarySk"] {
+  grid-column: 1/2;
+}
+
+label:nth-of-type(even),
+input:nth-of-type(even) {
+  grid-column: 2/3;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 0;
+  border-bottom: 2px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: white;
+  max-width: 50%;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 20px;
+  column-gap: 20px;
+  padding: 10px 30px;
+  border-bottom: 2px dashed #04105b;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1.5rem;
+  background-color: #c52303;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
 }
