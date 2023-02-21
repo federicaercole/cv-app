@@ -7,25 +7,23 @@ class Education extends Component {
     // }
 
     render() {
-        const { data, onChange } = this.props;
+        const { education, onChange } = this.props;
 
         return (
-            <>
-                <label htmlFor="startDateEd">Start date</label>
-                <input type="text" id=" startDateEd" name="startDateEd" defaultValue={data.startDateEd} onChange={(e) => onChange(e)} />
-
-                <label htmlFor="endDateEd">End Date</label>
-                <input type="endDateEd" id="endDateEd" name="endDateEd" defaultValue={data.endDateEd} onChange={(e) => onChange(e)} />
-
+            <section key={education.id}>
+                <h2>Education</h2>
+                <label htmlFor="dateEd">Interval</label>
                 <label htmlFor="studyTitle">Title of Study</label>
-                <input type="text" id="studyTitle" name="studyTitle" defaultValue={data.studyTitle} onChange={(e) => onChange(e)} />
+
+                <input type="text" id="dateEd" name="dateEd" defaultValue={education.dateEd} onChange={(e) => onChange(e)} />
+                <input type="text" id="studyTitle" name="studyTitle" defaultValue={education.studyTitle} onChange={(e) => onChange(e)} />
 
                 <label htmlFor="schoolName">School Name</label>
-                <input type="text" id="schoolName" name="schoolName" defaultValue={data.schoolName} onChange={(e) => onChange(e)} />
+                <input type="text" id="schoolName" name="schoolName" defaultValue={education.schoolName} onChange={(e) => onChange(e)} />
 
                 <label htmlFor="summaryEd">Summary</label>
-                <textarea id="summaryEd" name="summaryEd" defaultValue={data.summaryEd} onChange={(e) => onChange(e)}></textarea>
-            </>)
+                <textarea id="summaryEd" name="summaryEd" defaultValue={education.summaryEd} onChange={(e) => onChange(e)}></textarea>
+            </section>)
     }
 }
 

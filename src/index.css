@@ -8,9 +8,11 @@
 body {
   font-family: 'Outfit', sans-serif;
   font-size: 1.1rem;
-  background-color: white;
   background: rgb(6, 28, 149);
   background: linear-gradient(150deg, rgba(6, 28, 149, 1) 0%, rgba(252, 40, 0, 1) 100%);
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
 }
 
 h1 {
@@ -29,15 +31,14 @@ section h2 {
   padding: 10px;
 }
 
-textarea,
-#skillName {
+textarea {
   grid-column: 1/3;
   resize: none;
 }
 
 label:nth-of-type(odd),
 input:nth-of-type(odd),
-section>label[for="summarySk"] {
+section>label[for*="summary"] {
   grid-column: 1/2;
 }
 
@@ -56,7 +57,8 @@ textarea {
   margin-bottom: 20px;
 }
 
-form {
+form,
+.preview {
   background-color: white;
   max-width: 50%;
   margin: 0 auto;
@@ -65,7 +67,7 @@ form {
   padding: 20px 0;
 }
 
-section {
+form section {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 20px;
@@ -85,4 +87,90 @@ button {
   cursor: pointer;
   margin: 0 auto;
   display: block;
+}
+
+button:hover,
+button:active {
+  background-color: #04105b;
+}
+
+.preview h1 {
+  color: #04105b;
+  text-align: left;
+}
+
+.preview h1+h2 {
+  color: #04105b;
+  background-color: transparent;
+  border-bottom: 2px solid #04105b;
+  padding-left: 0;
+}
+
+.preview h2 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.preview h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.preview h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.primary-column h4>span {
+  float: right;
+  font-size: 1rem;
+}
+
+.secondary-column {
+  background-color: #04105b;
+  color: white;
+  padding: 20px;
+}
+
+.secondary-column h2 {
+  padding: 0;
+}
+
+.secondary-column li {
+  margin-bottom: 10px;
+}
+
+.secondary-column li>svg,
+.preview h3>svg {
+  margin-right: 10px;
+}
+
+.secondary-column ul.skills {
+  list-style: url("./images/checkbox-checked.svg") inside;
+}
+
+.secondary-column li>span {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.secondary-column ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.preview {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.preview p {
+  margin-bottom: 20px;
+}
+
+.preview button {
+  grid-column: 1/3;
 }
