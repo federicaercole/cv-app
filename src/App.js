@@ -74,7 +74,6 @@ const App = () => {
   const addSkill = () => {
     const newSkill = {
       skillName: "",
-      summary: "",
       id: uuid(),
     }
 
@@ -103,29 +102,45 @@ const App = () => {
     setWork(work.concat(newWork))
   }
 
+  const deleteSkill = (id) => {
+    setSkill(skill.filter(obj => obj.id !== id));
+  }
+
+  const deleteWork = (id) => {
+    setWork(work.filter(obj => obj.id !== id));
+  }
+
+  const deleteEducation = (id) => {
+    setEducation(education.filter(obj => obj.id !== id));
+  }
+
+
   if (editable) {
     return (
       <>
         <h1>CV App</h1>
+
         <form>
           <Info info={info} onChange={handleChangeInfo} />
+
           <section>
             <h2>Work History</h2>
-            {work.map((item) => <Work key={item.id} work={item} onChange={handleChangeWork} />)}
-            <button type="button" onClick={addWork}>Add another work experience block</button>
+            {work.map((item) => <Work key={item.id} work={item} onChange={handleChangeWork} onClick={deleteWork} />)}
+            <button type="button" className="add" onClick={addWork}>Add a work experience block</button>
           </section>
 
           <section>
             <h2>Education</h2>
-            {education.map((item) => <Education key={item.id} education={item} onChange={handleChangeEducation} />)}
-            <button type="button" onClick={addEducation}>Add another education block</button>
+            {education.map((item) => <Education key={item.id} education={item} onChange={handleChangeEducation} onClick={deleteEducation} />)}
+            <button type="button" className="add" onClick={addEducation}>Add an education block</button>
           </section>
 
           <section>
             <h2>Skills</h2>
-            {skill.map((item) => <Skill key={item.id} skill={item} onChange={handleChangeSkill} />)}
-            <button type="button" onClick={addSkill}>Add a skill</button>
+            {skill.map((item) => <Skill key={item.id} skill={item} onChange={handleChangeSkill} onClick={deleteSkill} />)}
+            <button type="button" className="add" onClick={addSkill}>Add a skill</button>
           </section>
+
           <button type="submit" onClick={toggleEdit}>Save CV</button>
         </form>
       </>)
