@@ -2,14 +2,10 @@ import { Component } from "react";
 
 class Info extends Component {
 
-    // constructor(props) {
-    //     super(props)
-    // }
-
     render() {
         const { info, onChange } = this.props;
         return (
-            <section>
+            <fieldset>
                 <h2>Personal information</h2>
                 <label htmlFor="name">Name</label>
                 <label htmlFor="job-title">Job Title</label>
@@ -31,7 +27,7 @@ class Info extends Component {
 
                 <label htmlFor="summary">Summary</label>
                 <textarea id="summary" name="summary" defaultValue={info.summary} onChange={(e) => onChange(e)}></textarea>
-            </section>)
+            </fieldset>)
     }
 }
 

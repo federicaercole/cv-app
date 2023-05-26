@@ -2,10 +2,6 @@ import { Component } from "react";
 
 class Work extends Component {
 
-    // constructor(props) {
-    //     super(props)
-    // }
-
     render() {
         const { work, onChange, onClick } = this.props;
 

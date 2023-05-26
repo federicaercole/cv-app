@@ -123,23 +123,23 @@ const App = () => {
         <form>
           <Info info={info} onChange={handleChangeInfo} />
 
-          <section>
+          <fieldset>
             <h2>Work History</h2>
             {work.map((item) => <Work key={item.id} work={item} onChange={handleChangeWork} onClick={deleteWork} />)}
             <button type="button" className="add" onClick={addWork}>Add a work experience block</button>
-          </section>
+          </fieldset>
 
-          <section>
+          <fieldset>
             <h2>Education</h2>
             {education.map((item) => <Education key={item.id} education={item} onChange={handleChangeEducation} onClick={deleteEducation} />)}
             <button type="button" className="add" onClick={addEducation}>Add an education block</button>
-          </section>
+          </fieldset>
 
-          <section>
+          <fieldset>
             <h2>Skills</h2>
             {skill.map((item) => <Skill key={item.id} skill={item} onChange={handleChangeSkill} onClick={deleteSkill} />)}
             <button type="button" className="add" onClick={addSkill}>Add a skill</button>
-          </section>
+          </fieldset>
 
           <button type="submit" onClick={toggleEdit}>Save CV</button>
         </form>

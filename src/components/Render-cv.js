@@ -2,7 +2,6 @@ import { Component, Fragment } from "react";
 
 class Render extends Component {
 
-
     render() {
         const { info, work, education, skill, onClick } = this.props;
 

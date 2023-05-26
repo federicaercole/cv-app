@@ -2,10 +2,6 @@ import { Component } from "react";
 
 class Education extends Component {
 
-    // constructor(props) {
-    //     super(props)
-    // }
-
     render() {
         const { education, onChange, onClick } = this.props;
 
